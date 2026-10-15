@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06163d">
+<title>US Cloud Mobile</title>
+<style>
+:root{color-scheme:dark;--bg:#06112b;--panel:#0d2046;--line:#25416d;--cyan:#25c8f4;--muted:#a9bbd8;--white:#f7fbff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#123b80 0,#06112b 50%,#030918 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--white);min-height:100vh}
+.wrap{max-width:980px;margin:auto;padding:20px 16px 42px}.top{display:flex;align-items:center;gap:12px;margin-bottom:24px}.logo{width:54px;height:54px;border-radius:16px;background:linear-gradient(145deg,#0c58c9,#06143a);border:1px solid #4ddcff;display:grid;place-items:center;box-shadow:0 0 26px #0a87d855;font-size:28px}.brand{font-weight:800;font-size:21px;letter-spacing:-.5px}.brand span{color:var(--cyan)}.sub{font-size:12px;color:var(--muted);letter-spacing:2px;margin-top:2px}.pill{margin-left:auto;border:1px solid #7d5a24;background:#3b2b12;color:#ffd27c;border-radius:999px;padding:7px 10px;font-size:12px;white-space:nowrap}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.05;margin:0 0 10px;letter-spacing:-1.3px}.lead{color:var(--muted);line-height:1.6;margin:0 0 24px;max-width:650px}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.card{background:linear-gradient(155deg,#102650ed,#091833f5);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 16px 45px #0003}.card h2{font-size:16px;margin:0 0 15px}.status{display:flex;align-items:center;gap:8px;font-size:13px;color:#ffd27c;margin-bottom:14px}.dot{width:8px;height:8px;border-radius:50%;background:#ffbd4a;box-shadow:0 0 10px #ffbd4a}
+.phone{max-width:290px;margin:8px auto 0;border:5px solid #b9d6ee;border-radius:34px;padding:9px;background:#030b1c;box-shadow:0 0 28px #20c9f433}.screen{border-radius:22px;min-height:340px;background:linear-gradient(160deg,#0e2d62,#06112b);padding:18px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.notch{height:5px;width:70px;border-radius:10px;background:#8aa8c8;margin:0 auto 25px}.cloud{font-size:64px;filter:drop-shadow(0 0 14px #22c7f5)}.screen h3{margin:8px 0;font-size:18px}.screen p{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 18px}.fakeflag{font-size:26px;margin-bottom:8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;background:linear-gradient(90deg,#21bdf0,#2878f0);color:#04122c;font-weight:800;padding:12px 15px;cursor:pointer;text-decoration:none}.btn.secondary{background:#152d52;color:#eaf6ff;border:1px solid #345783}.btn:focus-visible,input:focus-visible{outline:2px solid white;outline-offset:2px}.full{width:100%}.actions{display:flex;gap:10px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.stat{border:1px solid #28466f;border-radius:12px;padding:12px;background:#071630}.stat small{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}.stat strong{font-size:13px}.section{margin-top:16px}.note{font-size:12px;line-height:1.6;color:var(--muted)}label{display:block;font-size:12px;color:#d4e4fa;margin:12px 0 6px}input{width:100%;padding:12px;border-radius:10px;border:1px solid #34527e;background:#06132a;color:white;font:inherit}footer{text-align:center;color:#7e95b8;font-size:11px;margin-top:22px}.toast{display:none;margin-top:12px;padding:11px;border-radius:10px;background:#183b38;border:1px solid #2b8b77;color:#b9ffea;font-size:12px}.toast.show{display:block}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.wrap{padding:16px 12px 30px}.pill{font-size:10px}.phone{max-width:260px}.screen{min-height:310px}.card{padding:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="logo" aria-hidden="true">☁</div>
+  <div><div class="brand">US <span>Cloud</span></div><div class="sub">— MOBILE —</div></div>
+  <div class="pill">● PROVIDER NOT CONNECTED</div>
+</header>
+<h1>Your cloud phone,<br>within reach.</h1>
+<p class="lead">A mobile-friendly control panel for a remote US Android device. Connect a real compatible provider to enable live streaming and device controls.</p>
+<div class="grid">
+  <section class="card">
+    <h2>Device preview</h2>
+    <div class="status"><span class="dot"></span><span id="statusText">Setup required · No device connected</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="screen">
+        <div class="cloud">☁</div>
+        <div class="fakeflag">🇺🇸</div>
+        <h3>US Cloud Mobile</h3>
+        <p id="screenMessage">Your remote Android phone will appear here after a real provider is configured.</p>
+        <button class="btn full" id="connectBtn">Configure connection</button>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><small>Device location</small><strong>Not verified</strong></div>
+      <div class="stat"><small>Android version</small><strong>Not connected</strong></div>
+      <div class="stat"><small>Public IP</small><strong>Not verified</strong></div>
+      <div class="stat"><small>Carrier network</small><strong>Not verified</strong></div>
+    </div>
+  </section>
+  <section>
+    <div class="card">
+      <h2>Provider connection</h2>
+      <p class="note">This prototype does not create a phone or provide a US IP by itself. Add credentials only after choosing a provider with a documented API. Never put secret keys in a public website.</p>
+      <label for="provider">Provider name</label>
+      <input id="provider" placeholder="e.g. your cloud-phone provider" autocomplete="off">
+      <label for="apiUrl">Provider API URL (optional)</label>
+      <input id="apiUrl" placeholder="https://api.provider.example" inputmode="url" autocomplete="url">
+      <div class="actions section">
+        <button class="btn full" id="saveBtn">Save local setup notes</button>
+        <button class="btn secondary full" id="resetBtn">Clear fields</button>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+    <div class="card section">
+      <h2>What must be connected?</h2>
+      <p class="note">✓ A physical or dedicated remote Android device hosted in the US<br><br>✓ A genuine US mobile carrier connection if a carrier IP is required<br><br>✓ Provider-supported remote screen streaming and touch control<br><br>✓ Server-side integration and secure credentials</p>
+      <a class="btn secondary full" href="https://blink.new/" target="_blank" rel="noopener">Open Blink project</a>
+    </div>
+  </section>
+</div>
+<footer>US Cloud Mobile · Interface prototype · No device connection is active</footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+$("connectBtn").addEventListener("click",()=>{$("provider").focus();$("toast").textContent="Choose a provider first. A real API integration is required for live device access."; $("toast").classList.add("show");});
+$("saveBtn").addEventListener("click",()=>{$("toast").textContent="Setup notes saved in this page only. No API key is collected or stored. Refreshing may clear these fields."; $("toast").classList.add("show");});
+$("resetBtn").addEventListener("click",()=>{$("provider").value="";$("apiUrl").value="";$("toast").classList.remove("show");});
+</script>
+</body>
+</html>
